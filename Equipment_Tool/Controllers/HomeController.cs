@@ -31,8 +31,29 @@ namespace Equipment_Tool.Controllers
             }
             return View(request);
         }
+        
+        // Milestone 4: All equipment
+        [HttpGet("AllEquipment")]
+        public IActionResult AllEquipment()
+        {
+            return View(EquipmentRepository.AllEquipment);
+        }
 
-        // Kept from the template
+        // Milestone 4: Available equipment only
+        [HttpGet("AvailableEquipment")]
+        public IActionResult AvailableEquipment()
+        {
+            return View(EquipmentRepository.AvailableEquipment);
+        }
+        
+        // Milestone 5: Admin page - URL only, not in the menu
+        [HttpGet("Requests")]
+        public IActionResult Requests()
+        {
+            return View(Repository.Requests);
+        }
+
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
